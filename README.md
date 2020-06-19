@@ -24,7 +24,7 @@ Install Epyk
 
 > pip install epyk
 
-Then create your first on demand report leveraging on Tornado
+Then create your first on demand report leveraging on FastAPI
 ```py
 
 ```
