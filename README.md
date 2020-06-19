@@ -4,6 +4,12 @@
 
 # Epyk on FastAPI!
 
+This repository is quite simple to show case the use of Epyk.
+
+<div align="center" >
+    <img src="https://github.com/marlyk/epyk-uvicorn/blob/master/static/images/details.PNG?raw=true">
+</div>
+
 In this case the use of Epyk is a bit different. It will mainly help on the creation of rich templates to be render by the web server.
 It is possible to have a multi level architecture with an application server in between in order to enrich the template before 
 rendering string to the web server.
