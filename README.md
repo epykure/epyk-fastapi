@@ -1,10 +1,28 @@
 
-![](https://raw.githubusercontent.com/epykure/epyk-tornado/master/static/images/logo.ico)
-
-# Epyk Tornado!
+![](https://raw.githubusercontent.com/epykure/epyk-fastapi/master/static/images/logo.ico)
 
 
-An easy way to use Epyk within a Tornado Web App
+# Epyk on FastAPI!
+
+In this case the use of Epyk is a bit different. It will mainly help on the creation of rich templates to be render by the web server.
+It is possible to have a multi level architecture with an application server in between in order to enrich the template before 
+rendering string to the web server.
+
+In this design the logic on the web server is done directly in a native language.
+
+in this example the web server is managed by FastAPI.
+
+For more details on FastAPI please go to the [official website](https://fastapi.tiangolo.com/)
+
+## Quickstart
+
+Install FastAPI
+
+> pip install fastapi
+
+Install Epyk
+
+> pip install epyk
 
 ## Quickstart
 
