@@ -4,6 +4,8 @@ from epyk.tests import data_urls
 
 def get_page(rptObj):
   """
+  Description:
+  ------------
 
   Attributes:
   ----------
@@ -18,7 +20,7 @@ def get_page(rptObj):
     {'countries': 'RUS', 'size': 15},
     {'countries': 'ESP', 'size': 15},
   ]
-
+  rptObj.headers.dev()
   data_countries = rptObj.py.requests.csv(data_urls.PLOTLY_COUNTRIES)
 
   europe = rptObj.ui.geo.plotly.choropleths.europe(data_countries, size_col='GDP (BILLIONS)', country_col='CODE')
