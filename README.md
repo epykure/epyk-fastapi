@@ -24,53 +24,20 @@ Install Epyk
 
 > pip install epyk
 
-## Quickstart
-
-Install Tornado
-
-> pip install tornado
-
-Install Epyk
-
-> pip install epyk
-
 Then create your first on demand report leveraging on Tornado
 ```py
-import tornado.ioloop
-import tornado.web
 
-# Epyk is needed for the on demand report generation
-from epyk.core.Page import Report
-
-class MainOnTheFlyHandler(tornado.web.RequestHandler):
-  def get(self):
-    page = Report()
-    page.headers.dev()
-    div = page.ui.div("Hellow World!")
-    button = page.ui.button("Click Me")
-    div.style.css.color = 'red'
-    button.click([
-      page.js.alert("Clicked")
-    ])
-
-    self.write(page.outs.html())
-
-
-def make_app():
-    return tornado.web.Application([
-        (r"/dynamic", MainOnTheFlyHandler),
-    ])
 ```
 
 ## Presentation
 This package will make a simple interface between the back and the front end generation.
-For advanced use of Tornado please refer to the [official website](https://www.tornadoweb.org/en/stable/)
+For advanced use of FastAPI please refer to the [official website](https://fastapi.tiangolo.com/)
 
-This repository will deal with common and simple example to demonstrate how to integrate Epyk to your Tornado static.
+This repository will deal with common and simple example to demonstrate how to integrate Epyk to your FastAPI environment.
 
 Epyk can be used in two different ways:
 
-- Generating static or semi static (with Jinja) templates which will then be updated by Tornado
+- Generating static or semi static (with Jinja) templates which will then be updated by FastAPI
 - Producing on the fly template within the views
 
 This project will provide example on the different ways of using Epyk templates.
@@ -90,7 +57,7 @@ It is possible also to generate the page on the fly, it the structure of the pag
 This can easily adapt the page to the data without having to create multiple static reports.
 
 <div align="center" >
-    <img src="https://github.com/epykure/epyk-tornado/blob/master/static/images/server_archi_1.PNG?raw=truee">
+    <img src="https://github.com/epykure/epyk-fastapi/blob/master/static/images/server_archi_1.PNG?raw=truee">
 </div>
 
 The concept is quite simple and it is based on components. Epyk is structure in simple components with some predefined styles and events.
@@ -99,14 +66,14 @@ Nearly all the CSS properties, ARIA information and JavaScript functions have be
 No need to change code anymore or to maintain multiple static templates.
  
 <div align="center" >
-    <img src="https://github.com/epykure/epyk-tornado/blob/master/static/images/server_archi_2.PNG?raw=true">
+    <img src="https://github.com/epykure/epyk-fastapi/blob/master/static/images/server_archi_2.PNG?raw=true">
 </div>
 
 
 On teh server side for complex component, the data module will provide you with simple function to convert the data to the right format.
 
 <div align="center" >
-    <img src="https://github.com/epykure/epyk-tornado/blob/master/static/images/server_archi_3.PNG?raw=true">
+    <img src="https://github.com/epykure/epyk-fastapi/blob/master/static/images/server_archi_3.PNG?raw=true">
 </div>
 
 ## Benefits
