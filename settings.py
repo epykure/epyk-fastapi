@@ -5,6 +5,7 @@ from epyk.core.html.templates import HtmlTmplBase
 
 from epyk.core.css import Defaults as css_defaults
 from epyk.core.html import Defaults as html_defaults
+from epyk.core.js import Imports
 
 
 HtmlTmplBase.STATIC_PAGE = '''
@@ -33,3 +34,8 @@ class Font(object):
 
 css_defaults.Font = Font
 
+
+EXTENSIONS = {}
+
+
+Imports.extend_imports(EXTENSIONS)
