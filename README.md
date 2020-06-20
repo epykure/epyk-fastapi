@@ -32,8 +32,40 @@ Install Epyk
 
 Then create your first on demand report leveraging on FastAPI
 ```py
+from fastapi import FastAPI, Request
+from fastapi.responses import HTMLResponse
 
+
+@app.get("/dynamic", response_class=HTMLResponse)
+async def dynamic(request: Request):
+  """
+  Description:
+  ------------
+
+  :param request:
+  """
+  from epyk.core.Page import Report
+
+  page = Report()
+  page.headers.dev()
+  div = page.ui.div("Hellow World!")
+  button = page.ui.button("Click Me")
+  div.style.css.color = 'red'
+  button.click([
+    page.js.alert("Clicked")
+  ])
+  return page.outs.html()
 ```
+
+The above will render dynamically the dashboard on the below link (this depends on you server settings):
+http://127.0.0.1:8080/dynamic
+
+It is also possible to use the FastAPI API to get a good definition of your services
+http://127.0.0.1:8080/docs
+
+<div align="center" >
+    <img src="https://github.com/epykure/epyk-fastapi/blob/master/static/images/fastAPI.PNG?raw=true">
+</div>
 
 ## Presentation
 This package will make a simple interface between the back and the front end generation.

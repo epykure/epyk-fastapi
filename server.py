@@ -118,6 +118,27 @@ async def data_chartjs(request: Request):
   return {'scatter': result, 'pie': result_pie, 'bar': result_bar}
 
 
+@app.get("/dynamic", response_class=HTMLResponse)
+async def dynamic(request: Request):
+  """
+  Description:
+  ------------
+
+  :param request:
+  """
+  from epyk.core.Page import Report
+
+  page = Report()
+  page.headers.dev()
+  div = page.ui.div("Hellow World!")
+  button = page.ui.button("Click Me")
+  div.style.css.color = 'red'
+  button.click([
+    page.js.alert("Clicked")
+  ])
+  return page.outs.html()
+
+
 @app.post("/data")
 async def data(request: Request):
   """
