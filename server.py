@@ -107,10 +107,12 @@ async def data_chartjs(request: Request):
   from epyk.core import data as chart_data
 
   values = [
-    {1: 45, 2: 41, 3: 4, 5: 48, 'x': 1, 'g': "A"},
-    {1: 45, 2: 41, 3: 4, 5: 48, 'x': 1, 'g': "B"},
+    {1: 45, 2: 41, 3: 4, 4: 20, 5: 4, 'x': 1, 'g': "A"},
+    {1: 45, 2: 41, 3: 4, 4: 3, 5: 12, 'x': 1, 'g': "B"},
   ]
-  result = chart_data.chartJs.xyz(values, [1, 2], 'x')
+
+  # Format the data to meet the containers expectations
+  result = chart_data.chartJs.xyz(values, [1, 2], 'x', [5, 4])
   result_bar = chart_data.chartJs.y(values, [3, 4, 5], 'g')
   result_pie = chart_data.chartJs.y(values, [1, 4, 5], 'g')
   return {'scatter': result, 'pie': result_pie, 'bar': result_bar}
