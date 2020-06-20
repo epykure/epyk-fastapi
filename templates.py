@@ -2,6 +2,8 @@
 import os
 import sys
 
+import settings
+
 from epyk.core.Page import Report
 
 template_path = 'reports'
