@@ -52,6 +52,7 @@ def read_item(file_name, refresh: bool = False):
   Attributes:
   ----------
   :param file_name:
+  :param refresh:
   """
   html_page = os.path.join('views', '%s.html' % file_name)
   if not os.path.exists(html_page):
