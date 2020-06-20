@@ -85,6 +85,17 @@ async def file(request: Request):
     return {"cols": content}
 
 
+@app.post("/data_table")
+async def data_table(request: Request):
+  """
+  Description:
+  ------------
+
+  :param request:
+  """
+  return {'row': {"name": 'test'}, 'columns': [], 'visible': [], 'content': []}
+
+
 @app.post("/data")
 async def data(request: Request):
   """
